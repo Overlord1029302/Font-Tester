@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Picker</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #444;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Styling for the controls container */
+        .controls {
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+            padding: 15px;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        label {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #555;
+        }
+
+        select, input {
+            font-size: 1rem;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        select:hover, input:hover {
+            border-color: #999;
+        }
+
+        /* Preview box styling */
+        .preview-box {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            color: #222;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            label, select, input {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Font Picker</h1>
+    <p>Experiment with different fonts and sizes for the sentence below:</p>
+    
+    <div class="controls">
+        <label for="font-select">Font:</label>
+        <select id="font-select">
+            <!-- Basic Fonts -->
+            <option value="Arial">Arial</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Comic Sans MS">Comic Sans MS</option>
+            <!-- Additional Fonts -->
+            <option value="Impact">Impact</option>
+            <option value="Trebuchet MS">Trebuchet MS</option>
+            <option value="Palatino Linotype">Palatino Linotype</option>
+            <option value="Garamond">Garamond</option>
+            <option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
+            <option value="Tahoma">Tahoma</option>
+            <option value="Helvetica">Helvetica</option>
+            <option value="Brush Script MT">Brush Script MT</option>
+            <option value="Gill Sans">Gill Sans</option>
+            <option value="Optima">Optima</option>
+            <option value="Didot">Didot</option>
+            <option value="Perpetua">Perpetua</option>
+        </select>
+        
+        <label for="font-size">Size (px):</label>
+        <input type="number" id="font-size" min="10" max="100" value="16">
+    </div>
+
+    <div class="preview-box" id="preview">
+        The quick brown fox jumps over the lazy dog
+    </div>
+
+    <script>
+        const fontSelect = document.getElementById('font-select');
+        const fontSizeInput = document.getElementById('font-size');
+        const previewBox = document.getElementById('preview');
+
+        // Update preview when font or size changes
+        function updatePreview() {
+            const selectedFont = fontSelect.value;
+            const fontSize = fontSizeInput.value + "px";
+
+            previewBox.style.fontFamily = selectedFont;
+            previewBox.style.fontSize = fontSize;
+        }
+
+        fontSelect.addEventListener('change', updatePreview);
+        fontSizeInput.addEventListener('input', updatePreview);
+    </script>
+</body>
+</html>
