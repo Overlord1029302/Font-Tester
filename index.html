@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Font Picker</title>
     <style>
-        /* General styling */
+     
         body {
             font-family: Arial, sans-serif;
             background-color: #f9f9f9;
@@ -27,7 +27,7 @@
             color: #666;
         }
 
-        /* Styling for the controls container */
+        
         .controls {
             max-width: 600px;
             margin: 0 auto 20px auto;
@@ -59,7 +59,7 @@
             border-color: #999;
         }
 
-        /* Preview box styling */
+        
         .preview-box {
             max-width: 600px;
             margin: 0 auto;
@@ -73,7 +73,7 @@
             color: #222;
         }
 
-        /* Responsive Design */
+        
         @media (max-width: 600px) {
             .controls {
                 flex-direction: column;
@@ -101,7 +101,7 @@
             <option value="Georgia">Georgia</option>
             <option value="Verdana">Verdana</option>
             <option value="Comic Sans MS">Comic Sans MS</option>
-            <!-- Additional Fonts -->
+            
             <option value="Impact">Impact</option>
             <option value="Trebuchet MS">Trebuchet MS</option>
             <option value="Palatino Linotype">Palatino Linotype</option>
@@ -129,7 +129,7 @@
         const fontSizeInput = document.getElementById('font-size');
         const previewBox = document.getElementById('preview');
 
-        // Update preview when font or size changes
+       
         function updatePreview() {
             const selectedFont = fontSelect.value;
             const fontSize = fontSizeInput.value + "px";
